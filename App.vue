@@ -6,23 +6,32 @@
         </header>
 
         <ul class="card-list">
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
-            <li class="card-item"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
+            <li class="card-item" v-intersect="onIntersect"></li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'App'
+        name: 'App',
+
+        methods: {
+            onIntersect(e) {
+                return {
+                    opacity: e.intersectionRatio / 2 + 0.5,
+                    transform: `scale(${e.intersectionRatio / 2 + 0.5})`
+                };
+            }
+        }
     };
 </script>
 
