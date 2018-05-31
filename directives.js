@@ -32,6 +32,9 @@ export const intersectionRoot = {
 
     unbind(el) {
         delete el.dataset.intersectionRoot;
+
+        const observer = observers.get(el);
+        observer.disconnect();
         observers.delete(el);
     }
 };
@@ -50,5 +53,12 @@ export const intersect = {
                 el.style.setProperty(property, styles[property]);
             }
         });
+    },
+
+    unbind(el) {
+        const intersectionRoot = el.closest('[data-intersection-root]') || document;
+        const observer = observers.get(intersectionRoot);
+
+        observer.unobserve(el);
     }
 };
