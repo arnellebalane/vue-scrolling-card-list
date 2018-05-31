@@ -2,7 +2,7 @@
     <div id="app">
         <header>
             <h1>Vue Scrolling Card List</h1>
-            <a href="#" target="_blank" rel="noopener noreferrer">github.com/arnellebalane/vue-scrolling-card-list</a>
+            <a href="https://github.com/arnellebalane/vue-scrolling-card-list" target="_blank" rel="noopener noreferrer">github.com/arnellebalane/vue-scrolling-card-list</a>
         </header>
 
         <ul class="card-list">
