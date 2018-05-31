@@ -26,8 +26,12 @@
 
         methods: {
             onIntersect({target, intersectionRatio}) {
-                target.style.opacity = intersectionRatio / 2 + 0.5;
-                target.style.transform = `scale(${intersectionRatio / 2 + 0.5})`;
+                if (intersectionRatio >= 1) {
+                    target.removeAttribute('style');
+                } else {
+                    target.style.opacity = intersectionRatio / 2 + 0.5;
+                    target.style.transform = `scale(${intersectionRatio / 2 + 0.5})`;
+                }
             }
         }
     };
