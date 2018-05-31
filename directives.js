@@ -44,15 +44,8 @@ export const intersect = {
         const intersectionRoot = el.closest('[data-intersection-root]') || document;
         const observer = observers.get(intersectionRoot);
 
+        callbacks.set(el, value);
         observer.observe(el);
-
-        callbacks.set(el, entry => {
-            const styles = value(entry);
-
-            for (let property in styles) {
-                el.style.setProperty(property, styles[property]);
-            }
-        });
     },
 
     unbind(el) {

@@ -25,11 +25,9 @@
         name: 'App',
 
         methods: {
-            onIntersect(e) {
-                return {
-                    opacity: e.intersectionRatio / 2 + 0.5,
-                    transform: `scale(${e.intersectionRatio / 2 + 0.5})`
-                };
+            onIntersect({target, intersectionRatio}) {
+                target.style.opacity = intersectionRatio / 2 + 0.5;
+                target.style.transform = `scale(${intersectionRatio / 2 + 0.5})`;
             }
         }
     };
