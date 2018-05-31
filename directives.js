@@ -9,8 +9,8 @@ function observerFactory(root) {
         threshold: []
     };
 
-    for (let i = 0; i <= 1; i += 0.05) {
-        config.threshold.push(i);
+    for (let i = 0; i <= 20; i++) {
+        config.threshold.push(0.05 * i);
     }
 
     return new IntersectionObserver(entries => {
