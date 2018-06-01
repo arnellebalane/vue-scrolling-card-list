@@ -1,3 +1,5 @@
+import 'intersection-observer';
+
 const observers = new Map([
     [document, observerFactory()]
 ]);
