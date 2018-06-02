@@ -6,16 +6,16 @@
         </header>
 
         <div class="card-list">
-            <img src="./images/01.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/02.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/03.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/04.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/05.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/06.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/07.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/08.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/09.jpg" class="card-item" v-intersect="onIntersect">
-            <img src="./images/10.jpg" class="card-item" v-intersect="onIntersect">
+            <img src="./images/01.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/02.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/03.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/04.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/05.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/06.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/07.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/08.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/09.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
+            <img src="./images/10.jpg" class="card-item" v-intersect="{callback: onIntersect, threshold}">
         </div>
     </div>
 </template>
@@ -23,6 +23,15 @@
 <script>
     export default {
         name: 'App',
+
+        data() {
+            const threshold = [];
+            for (let i = 0; i <= 20; i++) {
+                threshold.push(0.05 * i);
+            }
+
+            return { threshold };
+        },
 
         methods: {
             onIntersect({target, intersectionRatio}) {
