@@ -23,4 +23,4 @@ $ npm run build     # Builds files for deployment
 [2]: https://vuejs.org/
 [3]: https://parceljs.org/
 [4]: https://blog.arnellebalane.com/the-intersection-observer-api-d441be0b088d
-[5]: https://vue-scrolling-card-list.arnelle.me/
+[5]: https://vue-scrolling-card-list.arnelle.dev
